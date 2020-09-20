@@ -1,5 +1,9 @@
 QT += core gui widgets webenginewidgets
 CONFIG += c++17
+CONFIG += link_pkgconfig
+
+# This seems to fix link errors caused by webengine
+CONFIG+=use_gold_linker
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -18,4 +22,6 @@ FORMS += \
     mainwindow.ui
 
 LIBS += -lnotmuch
-LIBS += -lfmt
+
+PKGCONFIG += fmt
+PKGCONFIG += gmime-3.0

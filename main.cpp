@@ -1,3 +1,5 @@
+#include <gmime/gmime.h>
+
 #include "mainwindow.h"
 
 #include <QApplication>
@@ -157,6 +159,8 @@ public:
 
 int main(int argc, char *argv[])
 {
+	g_mime_init();
+
 	auto db = DB::open_db();
 
 	for (auto t : db->get_tags())
