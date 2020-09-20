@@ -1,4 +1,4 @@
-QT += core gui widgets
+QT += core gui widgets webenginewidgets
 CONFIG += c++17
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -7,12 +7,15 @@ DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs depr
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    messageview.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    messageview.h
 
 FORMS += \
     mainwindow.ui
 
 LIBS += -lnotmuch
+LIBS += -lfmt
